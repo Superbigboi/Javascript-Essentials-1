@@ -1,0 +1,152 @@
+to convert numbers in javascript
+hexadecimal: 0x
+octal: 0o
+binary: 0b
+scienitific notation:"base" e "power"
+fpr scientific notation its base ten btw
+
+to convert a primitive data type to another, you make a method of the type you're trying to convert to (the type should start with a capital letter) and the value you are trying to convert should be inside.
+example:
+String(1) the output is "1"
+Boolean(1) the output is true
+BigInt(11) the output is 11
+Number("3") the output is 3
+
+you can put an array inside an array and and object inside an array, really just any type of data type
+remember the index starts from 0 so if the index is 10, there are 9 values inside that array
+
+Methods for Arrays:
+Length - gets the ammount of values inside the array
+IndexOf - finds the index of a specified value
+Push - Adds an alement at the end of an array (right)
+Unshift - Adds an element to the beginning of an array
+Pop - Removes the last element from an array
+Shift - Removes the first element from an array
+Reverse - Its pretty obvious, the order of the elements in the array gets reversed
+Concat - Concat method makes a new array by adding two of them, thats it
+
+Slice - Makes a new array out of another array, but the original array still has its elements and there can be up to 2 arguments that can be put inside, they represent an element
+ examples:
+for practice lets use this array:
+
+let games = ["SSBU","MK8","Fortnite","RL"];
+
+ - only one argument thats larger than 0: all the elements in the array from the number to the last are copied into the new array
+ex:
+
+let gamesSliced1 = games.slice(2)
+the result will be : ["Fortnite","RL"];
+
+- two arguments that are larger than zero: the elements specified in the first to the second are copied
+example:
+let gamesSliced2 = games.slice(1,3);
+the result will be : ["MK8","Fortnite"]
+
+- two arguments, first positive, the second negative: all elements from the first argument to the last index by the 2nd argument, but the 2nd index specifies to which last one, so pretty much if the 2nd argument is -3 that means that we do not copy the last three elements and -2 is until the last 2
+example:
+
+let gamesSliced3 = games.slice(0,-1);
+the result will be:["SSBU","MK8","Fortnite"]
+
+
+ - one negative argument – the specified number of the last elements are copied to the end of the array (e.g. -2 means that you copy the last two elements).
+
+example: 
+let gamesSliced4 = games.slice(-3);
+the result will be:["SSBU"]
+
+
+Types of Operators
+Assignment - assigns a value (it's just a =)
+Arithmetic - expresses mathematical operations
+(like + - / * ** %)
+  
+  Unary - adds or subtracts to/from a number (+ and -), there is also unary increment and decrement operators which add (++) and subtract (--) the value by 1. 
+Also is u add before a unary i/d operator after the value, it will change, but the former version will be used, (like 2++ displayed on a console would be 2, but would still be actually 3)
+so whats actually is happening is this:
+console.log(n1);
+n1 = n1 + 1;
+and vice-versa with putting the unary i/d operator before makes the new version be used
+n1 = n1 + 1;
+console.log(n1);
+
+Compound Assignment - This is just an arithmetic and assignment combined into one
+examples
+addition: x+=100 (could be written like x=x+100)
+subtraction : -= (you can guess)
+multiplication : *=
+division : /=
+
+Logical - Logical operators work with Boolean type values and there are there operators
+a conjunction (&& symbol)
+an alternative (|| symbol)
+a negation (! symbol)
+ Conjunction/ AND (&&) - if both operands are true, the result is true and if only one is false, the result is false
+ Alternative/OR (||) - if only one operand is true the result is true, and the result is false only if both are false
+  Negatation/NOT (!) - changes the operand to the opposite (like if the operand is false the result is true)
+It is also possible to create "sentences" with these logical operators. The highest priority is negation (!), then conjunction (&&), and finally the alternative (||). The precedence can be changed by parentheses
+
+Logical operators on non-Boolean values
+  NOT/Negative (!) - The operand is temporarly converted to a Boolean and is "reversed" so if a value type isn't 0 or empty the result be false
+example:
+let zero = 0;
+console.log(!zero) - the result is true
+
+  AND (&&) - The AND operator will return the first operand if it is false (the number zero, or an empty string) and the second operand otherwise. So if the first operand is true, the second one will be displayed
+examples:
+console.log(true && 1); the result is 1
+console.log(false && 1); the result is false
+console.log(1 && 0); the result is 1
+console.log(0 && 1); the result is 0
+console.log("Alice" && "Bob"); // -> Bob
+console.log("" && "Bob"); // -> empty string
+
+ OR (||) - The OR operator will return its first operand if it is true (a number more than 0,, and the second operand otherwise. 
+So if the first operand is false the second operand is displayed
+examples:
+console.log(true || 1); the result is true
+console.log(false || 1); the result is 1
+console.log(2 || 5); the result is 2
+console.log(0 || 5); the result is 5
+console.log("Alice" || "Bob") // -> Alice
+console.log("" || "Bob"); // -> Bob
+
+
+Both the AND and OR operators use short-circuit evaluation, meaning that for AND if the left operand is false it will be returned
+example
+console.log(false && "t") the result is false
+console.log(true && "t") the result is "t"
+
+and for OR, it will automatically return true if only the left operand is true
+examples:
+console.log(true || "t") the result is false
+console.log(false || "t") the result is "t"
+
+Compound (binary and assignment) - Its pretty simple, you just add the = (assignment operator) in front of a binary assignment. For example:
+a &&= false 
+is the same thing as 
+a = a && false
+
+String operators
+Concatenation (+) - converts everything to string and adds them together
+example
+let hello = "hi"
+console.log(hello + "" + "Michael") the result is hi Michael 
+
+Compound contcatenation (+=_ - adds everything like before into the new string
+example:
+let game = "Fortnite ";
+game += "Chapter 5 ";
+game += "season 3";
+the result is Fortnite Chapter 5 Season 3
+
+Comparison operators
+Are used to to check the equality or inequality of values
+there are two identity (===) and equality (==)
+ Identity (===) - in this type the operands have to be identical, the same data type and value
+  Equality (==) - in this type the operands have to be the same, even if they're different data types like 0 == false is correct
+
+more examples
+console.log(NaN == NaN); is false
+console.log(undefined == false); is false
+
