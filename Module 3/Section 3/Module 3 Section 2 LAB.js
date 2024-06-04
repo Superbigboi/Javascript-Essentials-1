@@ -13,14 +13,17 @@ email: "libero@convallis.edu"
 }];
 
 // write your code here
+let newName = window.prompt(`what is your name?`);
+let newPhone = window.prompt(`what is your phone number?`);
+let newEmail =  window.prompt(`what is your email?`);
+
+contacts.push({
+	name: newName,
+	phone: newPhone,
+	email: newEmail
+});
+
 let last = contacts.length - 1;
-
-contacts[last].name  = window.prompt(`what is your name?`);
-contacts[last].phone  = window.prompt(`what is your phone number?`);
-contacts[last].email  = window.prompt(`what is your email?`);
-
-
-
 
 console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
 console.log(`${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`);
