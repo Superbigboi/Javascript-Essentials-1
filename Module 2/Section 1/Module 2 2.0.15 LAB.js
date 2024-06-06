@@ -24,6 +24,7 @@ let Q1 = ()=>{
 
 
 
+
 // Question 2
 
 const SRose1 = 8;
