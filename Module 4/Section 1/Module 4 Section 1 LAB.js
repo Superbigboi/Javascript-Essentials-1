@@ -16,17 +16,16 @@ let contacts = [{
 let optionF = confirm("Do you want to display the first contact?");
 if(optionF){
     alert(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
-     console.log(`first contact ${optionF}`);
-     
-}else{console.log(`first contact ${optionF}`);}
-
-let optionL = confirm("Do you want to display the last contact?");
+     // console.log(`first contact ${optionF}`);
+}else{
+    let optionL = confirm("Do you want to display the last contact?");
 if(!optionF&&optionL){
     alert(`${contacts[2].name} / ${contacts[2].phone} / ${contacts[2].email}`);
-    console.log(`last contact ${optionL} && !${optionF}`);
+    // console.log(`last contact ${optionL} && !${optionF}`);
             
-}else{console.log(!optionL && !optionF);}
-let optionA = confirm("Do you want to add another contact to the list?");
+}else{
+    // console.log(!optionL && !optionF);
+    let optionA = confirm("Do you want to add another contact to the list?");
 let addName = prompt("What do you want the name to be?","Michael");
 let addPhone = prompt("What do you want the phone number to be?","123");
 let addEmail = prompt("What do you want the email to be?","realkranda@gmail.com");
@@ -57,3 +56,7 @@ if(optionA&&!optionF&&!optionL){
 }
             
 else{console.log(`adding of contacts ${optionA&&!optionF&&!optionL}`); alert("you inputed something wrong");}
+}
+
+}
+
