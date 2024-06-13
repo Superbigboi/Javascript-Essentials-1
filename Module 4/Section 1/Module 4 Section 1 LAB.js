@@ -13,50 +13,37 @@ let contacts = [{
 }];
 
 
-let optionF = confirm("Do you want to display the first contact?");
-if(optionF){
-    alert(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
-     // console.log(`first contact ${optionF}`);
-}else{
-    let optionL = confirm("Do you want to display the last contact?");
-if(!optionF&&optionL){
-    alert(`${contacts[2].name} / ${contacts[2].phone} / ${contacts[2].email}`);
-    // console.log(`last contact ${optionL} && !${optionF}`);
-            
-}else{
-    // console.log(!optionL && !optionF);
-    let optionA = confirm("Do you want to add another contact to the list?");
-let addName = prompt("What do you want the name to be?","Michael");
-let addPhone = prompt("What do you want the phone number to be?","123");
-let addEmail = prompt("What do you want the email to be?","realkranda@gmail.com");
-let Ncontacts = {name:"", phone:"", email:""};
-
-
-if(optionA&&!optionF&&!optionL){
-//  addName ? addName : false;
-//  addPhone ? addPhone :  false;
-//  addEmail ? addEmail : false;
-    let test = Boolean(addPhone) && Boolean(addName)&& Boolean(addEmail);
-    switch(test){
-        case true:
+let option = prompt("what do you want to display? (first, last, new)?");
+switch (option){
+    case "first":
+        alert(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
+        break;
+    case "last":
+        let lastContact = contacts.length -1;
+        alert(`${contacts[lastContact].name} / ${contacts[lastContact].phone} / ${contacts[lastContact].email}`);
+        break;  
+    case "new":
+        let addName = prompt("What do you want the name to be?","Michael");
+        let addPhone = prompt("What do you want the phone number to be?","(090) 798 00000");
+        let addEmail = prompt("What do you want the email to be?","email@domain.com");
+        let Ncontacts = {name:"", phone:"", email:""};
+        let test = addName && addPhone && addEmail;
+        if(test){
             Ncontacts.name = addName;
-            Ncontacts.phone = addPhone;
-            Ncontacts.email = addEmail;
-            contacts.push(Ncontacts);
-            console.log(optionA&&!optionF&&!optionL);
-
+      Ncontacts.phone = addPhone;
+      Ncontacts.email = addEmail;
+      contacts.push(Ncontacts);
             alert(`${contacts[3].name} / ${contacts[3].phone} / ${contacts[3].email}`);
-            // console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
-            break;
-        default:
-            alert("you inputed something wrong");
-    }
-        
-    
+            console.log(`contacts added successfully!`);
+        } 
+        else{
+             addName = addName? " " : "Name";
+             addPhone = addPhone? " " :  "Phone";
+             addEmail = addEmail? " " : "Email";
+            alert(`you didn't input in the fields: ${addName} ${addPhone} ${addEmail}`);
+            console.log(`contacts adding unsuccessful`);
+        }
+        break;
+    default:
+        alert("invalid choice, please input 'first', 'last' or 'new'");
 }
-            
-else{console.log(`adding of contacts ${optionA&&!optionF&&!optionL}`); alert("you inputed something wrong");}
-}
-
-}
-
