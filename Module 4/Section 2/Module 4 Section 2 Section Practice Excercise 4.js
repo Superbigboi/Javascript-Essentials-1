@@ -1,15 +1,29 @@
-let numbers = [21, 45, 100, 12, 11, 78, 61, 4, 39, 22];
-for (number of numbers) {
-    console.log(number)
-}
-for(even of numbers){
-	if(even % 2 === 0){
-		console.log(even)
+let movies = [];
+while(true){
+	let movieN = prompt("enter the name of movie");
+	let movieR = prompt("enter the imdb rating of the movie");
+
+	if(movieN === null || movieR === null){
+		break;
+	}else{
+		movies.push({
+			title:movieN,
+			rating:Number(movieR), 
+		});
 	}
 }
 
-for (size of numbers){
-	if(size>10 && size<60){
-		console.log(size)
+console.log("all ratings under 7:");
+for(r of movies){
+	if(r.rating < 7){
+		console.log(`${r.title} (${r.rating})`);
 	}
 }
+console.log("all ratings above 7:");
+for(r of movies){
+	if(r.rating >= 7){
+		console.log(`${r.title} (${r.rating})`);
+		break;
+	}
+}
+// console.log(movies);
