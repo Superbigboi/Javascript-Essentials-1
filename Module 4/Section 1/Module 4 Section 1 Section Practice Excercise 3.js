@@ -4,7 +4,7 @@ let operation = prompt("Enter the operation (+-/*)");
 
 let total;
 
-if(!Number.isNaN(number1) && !Number.isNaN(number2)){
+if(!Number.isNaN(number1) && !Number.isNaN(number1)){
 	switch(operation){
 		case "+":
 			total = number1+number2;
@@ -23,8 +23,7 @@ if(!Number.isNaN(number1) && !Number.isNaN(number2)){
 			alert(`sum is ${total}`);
 			break;
 	}
-}
-
 	else{
-		alert("error, u put something incorrectly");
+		alert("error, u put something incorrectly")
 	}
+}
