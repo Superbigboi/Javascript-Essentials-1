@@ -12,3 +12,7 @@ console.log(sorted); // [10, 20, 30, 40, 50]
 // use an anonymous function;
 // use an arrow function;
 // consider skipping the if statement.
+
+
+// actual solution ⬇️
+// numbers.sort((a, b) => a - b);
