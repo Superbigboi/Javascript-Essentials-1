@@ -12,20 +12,27 @@ let contacts = [{
     email: "libero@convallis.edu"
 }];
 
+
+let choice = prompt("what do you want to display? (first, last, all, new or quit)?");
+
 let showContact = (contacts,index) =>{
-    if(contacts instanceof Array){
+    if(contacts instanceof Array && contacts[index]){
         // console.log(true);
         console.log(`${contacts[index].name}/${contacts[index].phone}/${contacts[index].email}`);
         // console.log(contacts[1])
     }
     else{
-        console.log("wrong input");
+        console.log("bad input");
     }
 };
 function showAllContacts(tc){
     if(tc instanceof Array){
-           for(let number in contacts){
-        console.log(`${contacts[number].name}/${contacts[number].phone}/${contacts[number].phone}`);
+           for(number of contacts){
+            // console.log(number)
+            console.log(`${number.name} / ${number.phone} / ${number.email}`);
+
+            // console.log(number)
+        // console.log(`${contacts[number].name}/${contacts[number].phone}/${contacts[number].phone}`);
     }
    }
    else{console.log('input contacts')}
@@ -39,7 +46,7 @@ function addNewContact(contacts, name, phone, email){
 }
 
 
-console.log(showContact(contacts,1));
-console.log(showAllContacts(contacts))
+// console.log(showAllContacts(contacts))
+// console.log(showContact(contacts,0));
 console.log(addNewContact(contacts,'Michael',090,'realkranda@gmail.com'))
-// console.log(showAllContacts(1))
+console.log(showAllContacts(contacts))

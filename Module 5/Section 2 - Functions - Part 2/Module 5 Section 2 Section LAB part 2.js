@@ -13,27 +13,31 @@ let contacts = [{
 }];
 
 let showContact = (contacts,index,sort) =>{
-    if(contacts instanceof Array){
     let order;
-    if(sort == "name"){order = ["name", "phone", "email"];}
-    else if(sort =="phone"){order = ["phone", "name", "email"];}
-    else if(sort == "email"){order = ["email", "name", "phone"];}
-        console.log(`${contacts[index].order[0]}/${contacts[index].order[1]}/${contacts[index].order[2]}`);
+    if(sort == "name"){contacts.sort(sort)}
+    if(sort =="phone"){}
+    if(sort == "email"){}
+
+    if(contacts instanceof Array ){
+    // if(sort == "name"){order = ["name", "phone", "email"];}
+    // else if(sort =="phone"){order = ["phone", "name", "email"];}
+    // else if(sort == "email"){order = ["email", "name", "phone"];}
+        console.log(`${contacts[index].order[0]}/${contacts[index].order[1]}/${contacts[index].order[32]}`);
     }
     else{
         console.log("wrong input");
     }
-    if(sort == "name"){contacts.sort()}
-    if(sort =="phone"){}
-    if(sort == "email"){}
+
 }
-function showAllContacts(c,sort){
-    if(c instanceof Array){
+function showAllContacts(tc){
+    if(tc instanceof Array){
            for(let number in contacts){
+            console.log(number)
         console.log(`${contacts[number].name}/${contacts[number].phone}/${contacts[number].phone}`);
+
     }
    }
-   else{console.log('input contacts')}
+   else console.log('input contacts')
 }
 function addNewContact(contacts, name, phone, email,sort){
     if(contacts instanceof Array && name && phone && email){
@@ -43,8 +47,8 @@ function addNewContact(contacts, name, phone, email,sort){
     }else{(console.log("contact adding unsuccessful"))}
 }
 
-
-console.log(showContact(contacts,1));
-console.log(showAllContacts(contacts));
-console.log(addNewContact(contacts,'Michael',090,'realkranda@gmail.com'));
-// console.log(showAllContacts(1))
+console.log(showContact(contacts,1))
+// console.log(showAllContacts(contacts))
+// console.log(showContact(contacts,1));
+// console.log(showAllContacts(contacts));
+// console.log(addNewContact(contacts,'Michael',090,'realkranda@gmail.com'));
