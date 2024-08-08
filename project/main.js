@@ -55,14 +55,41 @@ let contacts = [{
 //     else{return "input name, phone, or email"}
 // }
 function sName(){
-    
+    // for(number in contacts){
+    //     let tC = contacts[number];
+    //     // let eN = contacts[number].name;
+
+
+    //     // console.log(eN);
+    //     // alert(eN);
+    // }
 }
 function sPhone(){
+    // if()
 
-}
-function sEmail(){
+    // for(let number in contacts){
+    //     contacts[number].sort((a, b) => a - b);
+    // } 
+    // console.log(r)
     
-}
+    // for(let number in contacts){
+        let x = contacts.sort(function (a, b) {
+            let retVal = 0;
+            if (a > b) {
+                retVal = 1;
+            } else {
+                retVal = -1;
+            }
+            return retVal;
+       });
+        alert(x);
+        console.log(x);
+    } 
+    // console.log(r)
+// }
+function sEmail(){
+
+  }
 
 
 let end = false;
@@ -80,23 +107,27 @@ do{
             showAllContacts(contacts);
             break;
         case "new":
-            let name = prompt("Enter name:, Michael");
-            let phone = prompt("Enter phone:, 090 861 9090");
-            let email = prompt("Enter email:, email@gmail.com");
+            let name = prompt("Enter name:","Michael");
+            let phone = prompt("Enter phone:","090 971 00909");
+            let email = prompt("Enter email:","email@domain.com");
             addNewContact(contacts, name, phone, email);
             break;
         case "sort":
             let type = prompt("do you want to sort by name, email, or phone?");
-            if (type=="name"){sName(contacts)} 
-            if (type=="email"){sEmail()} 
-            if (type=="phone"){sPhone()} 
+            if (type=="name"){sName()} 
+            else if (type=="email"){sEmail()} 
+            else if (type=="phone"){sPhone()} 
+            else{alert("invalid input");break;}
             
             // sortType(type)
         case "quit":
             end = true; 
-            break;    
+            break;
+        case null:
+            end=true;
+            break;
         default:
-            console.log("Invalid option");
+            alert("Invalid option");
             break;
      
     }

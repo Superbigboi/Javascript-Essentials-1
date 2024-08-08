@@ -6,7 +6,7 @@ setTimeout(function () {
     clearInterval(intervalId)
 }, 20000);
 
-while()
+while();
 do{
     console.log(counter++)
 }
