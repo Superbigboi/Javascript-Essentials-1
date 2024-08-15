@@ -41,6 +41,7 @@ let contacts = [{
         if(contacts instanceof Array && name && phone && email){
                 contacts.push({name:name, phone:phone, email:email});
                             console.log("contact added successfully")
+                           alert("contact added successfully");
             
         }else{(console.log("contact adding unsuccessful"))}
     }
@@ -62,9 +63,9 @@ do{
             showAllContacts(contacts);
             break;
         case "new":
-            let name = prompt("Enter name:, Michael");
-            let phone = prompt("Enter phone:, 090 861 9090");
-            let email = prompt("Enter email:, email@gmail.com");
+            let name = prompt("Enter name:", "Michael");
+            let phone = prompt("Enter phone:", "090 7777 881");
+            let email = prompt("Enter email:,","email@gmail.com");
             addNewContact(contacts, name, phone, email);
             break;
         case "quit":
