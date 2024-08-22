@@ -1,6 +1,6 @@
 let contacts = [{
     name: "Maxwell Wright",
-    phone: "(0191) 719 6495",
+    phone: "0191 719 6495",
     email: "Curabitur.egestas.nunc@nonummyac.co.uk"
 }, {
     name: "Raja Villarreal",
@@ -28,7 +28,7 @@ let contacts = [{
         if(tc instanceof Array){
                for(number of contacts){
                 // console.log(number)
-                console.log(`${number.name} / ${number.phone} / ${number.email}`);
+                // console.log(`${number.name} / ${number.phone} / ${number.email}`);
                 alert(`${number.name} / ${number.phone} / ${number.email}`);
     
                 // console.log(number)
@@ -54,18 +54,50 @@ let contacts = [{
 //     else if (t=="email"){}
 //     else{return "input name, phone, or email"}
 // }
-function sName(){
-    
-}
+
+function sName() {
+    contacts.sort((a, b) => {
+      if (a.name > b.name) return 1;
+      else if (a.name < b.name) return -1;
+      else return 0;
+    });
+    console.log("Contacts sorted by name:");
+    showAllContacts(contacts);
+  }
+
 function sPhone(){
 
+    // // for(number of contacts){
+    // //     let No = contacts[number];
+    // //     // contacts[number].sort((a, b) => a - b);
+    // // };
+    // contacts.sort(function(a, b) {
+    //   return a - b;
+    // });
+    // showAllContacts(contacts)
+    // // console.log(contacts);
+    contacts.sort((a, b) => {
+        if (a.phone > b.phone) return 1;
+        else if (a.phone < b.phone) return -1;
+        else return 0;
+      });
+      console.log("Contacts sorted by phone:");
+      showAllContacts(contacts);
 }
 function sEmail(){
-    
-}
+    contacts.sort((a, b) => {
+        if (a.email > b.email) return 1;
+        else if (a.email < b.email) return -1;
+        else return 0;
+      });
+      console.log("Contacts sorted by email address:");
+      showAllContacts(contacts);
+    }
+
 
 
 let end = false;
+
 
 do{
     let choice = prompt("what do you want to display? (first, last, all, new, sort, or quit)?");
@@ -80,23 +112,30 @@ do{
             showAllContacts(contacts);
             break;
         case "new":
-            let name = prompt("Enter name:, Michael");
-            let phone = prompt("Enter phone:, 090 861 9090");
-            let email = prompt("Enter email:, email@gmail.com");
+            let name = prompt("Enter name:","Michael");
+            let phone = prompt("Enter phone:","090 971 00909");
+            let email = prompt("Enter email:","email@domain.com");
             addNewContact(contacts, name, phone, email);
             break;
         case "sort":
             let type = prompt("do you want to sort by name, email, or phone?");
-            if (type=="name"){sName(contacts)} 
-            if (type=="email"){sEmail()} 
-            if (type=="phone"){sPhone()} 
-            
-            // sortType(type)
+            if (type=="name"){sName()} 
+            else if (type=="email"){sEmail()}
+            else if (type=="phone"){sPhone()}
+            else{alert("invalid input")};
+            break;
         case "quit":
             end = true; 
-            break;    
+            break;
+        case null:
+            end=true;
+            break;
+        case "r":
+            end=true;
+            location.reload();
+            break;
         default:
-            console.log("Invalid option");
+            alert("Invalid option");
             break;
      
     }
